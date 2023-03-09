@@ -4,9 +4,9 @@ class Mail {
     constructor () { }
 
     async create(req, res) {
-        const { to, subject, message } = req.body;
+        const { from, to, subject, message } = req.body;
 
-        await MailService.sendMail({ to, subject, message });
+        await MailService.sendMail({ from, to, subject, message });
 
         return res.status(200).json({ message: 'Email enviado com sucesso' });
     }
