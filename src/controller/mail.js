@@ -8,7 +8,7 @@ class Mail {
 
         await MailService.sendMail({ from, to, subject, message });
 
-        return res.status(200).json({ message: 'Email enviado com sucesso' });
+        return res.status(200).json({ status: 200, message: 'Email enviado com sucesso' });
     }
 }
 
