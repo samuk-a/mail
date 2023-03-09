@@ -34,7 +34,7 @@ class Mail {
 
     async sendMail({from, to, subject, message}) {
         const mail = await this.buildMail({
-            from: from ?? process.env.SMTP_USER,
+            from: `${from} <${process.env.SMTP_USER}>`,
             to,
             subject,
             message
